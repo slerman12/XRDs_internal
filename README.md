@@ -20,6 +20,8 @@ python vpn.py
 
 But the typical way is to manually connect via the [Cisco AnyConnect app recommended by the University](https://tech.rochester.edu/services/remote-access-vpn/).
 
+If you have issue with the script, try opening and quiting the Cisco AnyConnect application.
+
 Then login to Bluehive:
 
 ```console
@@ -84,6 +86,8 @@ module load gcc
 ```
 
 The way to use Bluehive, is to queue up jobs on specific GPU nodes with an "```sbatch script```". I use an automated pipeline that generates and calls sbatch scripts according to my specified runs and hyper-parameters and selected GPUs, etc. It automatically connects to VPN and Bluehive and launches my desired jobs.
+
+Not automated, but if you wnat to do an interactive session on Bluehive, you can try something like ```interactive -c 4 -p gpu --gres=gpu:1``` or ```interactive -c 9 -p gpu --gres=gpu:8 -p csxu -A cxu22_lab --mem 180gb```.
 
 # Structure
 
